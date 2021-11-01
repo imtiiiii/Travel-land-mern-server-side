@@ -87,6 +87,27 @@ async function run() {
             res.send(data);
             // res.json(count);
         })
+        app.get("/allbooks/books/:id", async (req, res) => {
+            id = req.params.id;
+            // console.log("id-> ", id);
+            const query = { _id: ObjectId(id) };
+            const data = await allbookings.findOne(query);
+
+            res.send(data);
+        })
+        // update allbookings-> status- from pending to approve
+        app.put("/allbooks/books/:id", async (req, res) => {
+            console.log(req.params.id);
+            console.log(req.body.status);
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) }
+            const updateDoc = {
+                $set: {
+                    status: req.body.status
+                },
+            }
+            const result = await allbookings.updateOne(query, updateDoc);
+        })
 
     } finally {
         //await client.close();
