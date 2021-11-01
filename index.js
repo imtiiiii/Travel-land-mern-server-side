@@ -13,7 +13,7 @@ const ObjectId = require('mongodb').ObjectId;
 // importing finished here ---
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS}@cluster0.jcnea.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+// console.log(uri);
 async function run() {
     try {
         await client.connect();
@@ -22,6 +22,7 @@ async function run() {
         const blogsCollections = database.collection("blogs");
         const travelTipsCollections = database.collection("travelTips");
         const allbookings = database.collection("allbookings");
+        // console.log("all routes should be working");
         //POST api for services
         app.post('/services', async (req, res) => {
             const newService = req.body;
