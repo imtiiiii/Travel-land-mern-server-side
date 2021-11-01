@@ -64,14 +64,7 @@ async function run() {
 
             res.send(result);
         })
-        // GET api for all bookings
-        // app.get("/allbooks", async (req, res) => {
-        //     const all = allbookings.find({ email: "imtiazahmed026@gmail.com" });
-        //     const data = await all.toArray();
-        //     console.log(data);
-        //     res.send(data);
-        //     // res.json(count);
-        // })
+
         app.get("/allbooks", async (req, res) => {
             const email = req.query;
             console.log(typeof email);

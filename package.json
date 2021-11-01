@@ -2,7 +2,7 @@
   "name": "travel-land-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": " node index.js",
   "scripts": {
     "start": "node index.js",
     "start-dev": "nodemon index.js",
