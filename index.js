@@ -11,7 +11,7 @@ app.use(express.json());
 const ObjectId = require('mongodb').ObjectId;
 
 // importing finished here ---
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS}@cluster0.jcnea.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = "mongodb+srv://travel_land:rh55B1YmCpmg0zqH@cluster0.jcnea.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 // console.log(uri);
 async function run() {
